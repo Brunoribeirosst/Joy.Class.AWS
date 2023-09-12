@@ -1,0 +1,35 @@
+#Calculadora em Python
+
+import sys
+
+while True:
+    operacao = int(input("Escolha a operação (1 - Soma, 2 - Subtração, 3 - Multiplicação, 4 - Divisão, 0 - Sair): "))
+    
+    if operacao == 0:
+        print("Você encerrou o programa")
+        sys.exit()
+    elif operacao not in (1, 2, 3, 4):
+        print("Operação não reconhecida. Por favor, escolha uma operação válida (1 a 4) ou 0 para encerrar.")
+        continue  # Retorna ao início do loop
+    
+    num1 = float(input("Digite o primeiro número: "))
+    num2 = float(input("Digite o segundo número: "))
+    
+    def calculadorapy(num1, num2, operacao):
+        if operacao == 1:
+            resultado = num1 + num2
+        elif operacao == 2:
+            resultado = num1 - num2
+        elif operacao == 3:
+            resultado = num1 * num2
+        elif operacao == 4:
+            if num2 != 0:
+                resultado = num1 / num2
+            else:
+                print("Erro: Divisão por zero")
+                resultado = 0
+    
+        return resultado
+    
+    resultado = calculadorapy(num1, num2, operacao)
+    print("Resultado: ", resultado)
