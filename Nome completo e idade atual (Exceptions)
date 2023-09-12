@@ -1,0 +1,43 @@
+# Nome completo e idade - Opção 1
+
+nome_completo = input("Digite seu nome completo: ")
+
+while True:
+    try:
+        ano_nascimento = int(input("Digite o ano de nascimento (1922 a 2021): "))
+        if 1922 <= ano_nascimento <= 2021:
+            break
+        else:
+            print("Ano de nascimento fora do intervalo permitido. Tente novamente.")
+    except ValueError:
+        print("Entrada inválida. Digite um número válido.")
+
+ano_atual = 2022  # Ano atual assumido como 2022
+idade = ano_atual - ano_nascimento
+
+print(f"Nome: {nome_completo}")
+print(f"Idade em 2022: {idade} anos")
+
+
+----------------------------------------------------------------------------------------------------
+# Nome completo e idade - Opção 2
+
+nome = input("Insira seu nome completo: ")
+
+while any(c.isdigit() for c in nome):
+    print("O nome não pode conter números. Por favor, insira novamente.")
+    nome = input("Insira seu nome completo: ")
+
+# Agora, temos o nome completo sem números
+
+ano_nasc = input("Insira seu ano de nascimento: ")
+
+while not ano_nasc.isdigit() or int(ano_nasc) < 1922 or int(ano_nasc) > 2021:
+    print("O ano de nascimento deve ser um número entre 1922 e 2021. Por favor, insira novamente.")
+    ano_nasc = input("Insira seu ano de nascimento: ")
+
+# Agora, você tem o ano de nascimento válido dentro do intervalo.
+
+idade_atual = 2022 - int(ano_nasc)
+
+print("Olá", nome, "Sua idade atual é:", idade_atual, "anos")
