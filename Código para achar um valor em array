@@ -1,0 +1,26 @@
+# criar função para achar um elemento dentro de uma lista
+# saber se o elemento está ou não na lista
+def funcao_iter(lista, valor):
+  achou: bool = False
+  for i in lista:
+    if i == valor:
+      print("Encontrado o valor {} na posição {} da lista.".format(i, lista.index(i)))
+      achou = True
+
+  if achou == False:
+    print("Destino não existente.")
+    print("Destinos disponíveis:")
+    for i in lista:
+      print(i)
+
+lista = [
+    "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Salvador", "Brasília",
+    "Fortaleza", "Recife", "Manaus", "Curitiba", "Porto Alegre"
+]
+while True:
+    valor = input('Digite a cidade destino da sua viagem:')
+    if valor == "":
+      print("Saindo.")
+      break
+    else:
+        funcao_iter(lista, valor)
