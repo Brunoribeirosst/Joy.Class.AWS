@@ -1,5 +1,5 @@
-#Desafio Proz
-#Como desafio, adicione dois novos produtos da sua escolha à lista.
+//#Desafio Proz
+//#Como desafio, adicione dois novos produtos da sua escolha à lista.
 
 lista_produtos = ['máscaras faciais', 'batons', 'esmaltes', 'perfumes', 'loções',
                  'xampus', 'sabonetes', 'delineadores']
